@@ -50,3 +50,5 @@ Instructions:
 - Company Name: The name of the user's company.
 
 Add some styling to the component to make the user information stand out.
+
+## There are 2 exercises in this project. Please remove the necessary comments in the App.jsx to test the exercises.
