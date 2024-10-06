@@ -1,98 +1,52 @@
-## Homework 3
+## Homework 4
 
-### Exercise 1: Build a Family Tree with Props
+### Exercise 1: Simple Counter with Dynamic Background
 
-Objective:
+**Objective:**
+Create a counter component that changes its background color dynamically based on the counter's value.
 
-1. Create a simple Family Tree that displays a parent's name and passes down information about children and grandchildren through props.
-   Instructions:
-2. Create a Parent component that will display:
-   The parent's name.
-   It will also pass information about its children to the Child component.
-3. Create a Child component that will:
-   Display the child's name and age.
-   Receive and pass down information about its own children (grandchildren) to the Grandchild component.
-4. Create a Grandchild component that will:
-   Display the grandchild's name and favorite hobby.
-5. Pass props from the Parent component down to the Child and then from Child to Grandchild.
-   Render the Parent component in App.jsx, and ensure the family tree information is passed down to the grandchildren. Here is the family object:
+Instructions:
 
-```js
-const family = {
-  name: "John (Parent)",
-  children: [
-    {
-      name: "Alex (Child)",
-      age: 30,
-      grandchildren: [
-        { name: "Liam (Grandchild)", hobby: "Playing Soccer" },
-        { name: "Sophia (Grandchild)", hobby: "Drawing" },
-      ],
-    },
-    {
-      name: "Emma (Child)",
-      age: 28,
-      grandchildren: [{ name: "Noah (Grandchild)", hobby: "Reading" }],
-    },
-  ],
-}
-```
+1. Create a Functional Component named DynamicCounter:
+   - Use the useState hook to manage the counter value (initialize it to 0).
+2. Add Buttons to Increment and Decrement:
+   - Include two buttons: "Increment" and "Decrement".
+   - Clicking the "Increment" button should increase the counter by 1.
+   - Clicking the "Decrement" button should decrease the counter by 1.
+3. Change Background Color Based on Counter Value:
+   - Use the useEffect hook to dynamically update the background color of the component based on the counter value:
+     - Green if the counter is a positive number.
+     - Red if the counter is a negative number.
+     - White if the counter is 0.
+4. Display the Counter Value:
+   - Show the current counter value in the center of the component.
 
-### Exercise 2: Mood Tracker
+**Example Output:**
 
-Objective:
+When a user clicks the "Increment" or "Decrement" button, the counter value updates, and the background color changes accordingly.
 
-Create a Mood Tracker app where the user can select their current mood from a set of buttons. The app should display the selected mood and a corresponding emoji.
+**Bonus Challenge:**
 
-Components:
+Add a button to reset the counter to 0.
+Implement a feature to prevent the counter from going below a certain negative threshold (e.g., -10).
 
-1. MoodSelector:
-   Contains buttons for different moods (e.g., Happy, Sad, Excited, Tired).
-   When a button is clicked, it updates the current mood in the parent component using useState.
+### Exercise 2: Random User Fetcher
 
-2. MoodDisplay:
-   Receives the current mood as a prop and displays the mood text and an emoji that represents the mood.
+**Objective:**
+Create a React component that fetches and displays information about a random user using the JSONPlaceholder API.
 
-Requirements:
+Instructions:
 
-- Use the useState hook to track the current mood.
-- Pass the current mood as a prop from the parent to the MoodDisplay component.
-- Clicking different mood buttons should update the display with the correct mood and emoji.
+1. Create a new component named RandomUserFetcher.
+2. Inside the component, set up a button labeled "Get Random User".
+3. When the button is clicked:
+   - Generate a random number between 1 and 10. This number will represent the user ID.
+   - Use this random number to fetch data from the API: https://jsonplaceholder.typicode.com/users/{id}.
+4. Display the following user information on the screen:
 
-Use this object with emojis:
+- Name: The user's name.
+- City: The city from the user's address.
+- Phone Number: The user's phone number.
+- Company Name: The name of the user's company.
 
-```js
-const moodEmojiMap = {
-  Happy: "😊",
-  Sad: "😢",
-  Excited: "🤩",
-  Tired: "😴",
-}
-```
-Exercise 2: Mood Tracker
-Objective:
-
-Create a Mood Tracker app where the user can select their current mood from a set of buttons. The app should display the selected mood and a corresponding emoji.
-
-Components:
-
-MoodSelector: Contains buttons for different moods (e.g., Happy, Sad, Excited, Tired). When a button is clicked, it updates the current mood in the parent component using useState.
-
-MoodDisplay: Receives the current mood as a prop and displays the mood text and an emoji that represents the mood.
-
-Requirements:
-
-Use the useState hook to track the current mood.
-Pass the current mood as a prop from the parent to the MoodDisplay component.
-Clicking different mood buttons should update the display with the correct mood and emoji.
-Use this object with emojis:
-
-```js
-const moodEmojiMap = {
-  Happy: "😊",
-  Sad: "😢",
-  Excited: "🤩",
-  Tired: "😴",
-}
-```
-## There are 2 exercises in this project. Please remove the necessary comments for the exercises to work; e.g the "family" object in the App.jsx file.
+Add some styling to the component to make the user information stand out.
